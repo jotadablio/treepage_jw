@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-tech: "Orbitron", sans-serif;
+  
+  --color-slate-950: #020617;
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+  
+  --color-cyan-500: #06b6d4;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-200: #a5f3fc;
+  
+  --color-emerald-500: #10b981;
+  --color-emerald-400: #34d399;
+  
+  --color-red-500: #ef4444;
+  --color-red-400: #f87171;
+  
+  --color-pink-500: #ec4899;
+  --color-pink-400: #f472b6;
+  
+  --color-purple-500: #a855f7;
+  --color-purple-400: #c084fc;
+  
+  --color-amber-500: #f59e0b;
+  
+  --animate-scan-x: scan-x 2s ease-in-out infinite;
+  --animate-build: build-up 2.5s linear forwards;
+
+  @keyframes scan-x {
+    0%, 100% { transform: translateX(-20%); }
+    50% { transform: translateX(20%); }
+  }
+
+  @keyframes scan-y {
+    0%, 100% { transform: translateY(-10%); }
+    50% { transform: translateY(10%); }
+  }
+
+  @keyframes build-up {
+    0% { clip-path: inset(100% 0 0 0); opacity: 0.5; }
+    100% { clip-path: inset(0 0 0 0); opacity: 1; }
+  }
+}
+
+/* Custom animations for the printer */
+.animate-scan-x {
+  animation: var(--animate-scan-x);
+}
+
+.animate-build {
+  animation: var(--animate-build);
+}

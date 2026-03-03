@@ -13,9 +13,15 @@ interface LinkCardProps {
 const LinkCard: React.FC<LinkCardProps> = ({ href, icon, title, subtitle, colorClass, delay }) => (
   <a
     href={href}
-    target="_blank"
-    rel="noopener noreferrer"
+    target={href === '#' ? undefined : "_blank"}
+    rel={href === '#' ? undefined : "noopener noreferrer"}
     className={`group relative flex flex-col items-center justify-center p-6 gap-3 rounded-2xl border bg-slate-900/40 backdrop-blur-md transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 ${colorClass} ${delay} overflow-hidden`}
+    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (href === '#') {
+        e.preventDefault();
+        alert('Link em breve!');
+      }
+    }}
   >
     {/* Hover Gradient Background */}
     <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-white to-transparent transition-opacity duration-500"></div>

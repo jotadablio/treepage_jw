@@ -1,20 +1,43 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Jotadablio 3DWorld Links
 
-# Run and deploy your AI Studio app
+This is a portfolio link page for 3D printing services, featuring animated elements and a project workflow visualization.
 
-This contains everything you need to run your app locally.
+## Project Structure
 
-View your app in AI Studio: https://ai.studio/apps/drive/1FEF91SA9nD4Ie5djQfTMkO9tSt5_jQ1D
+- **App.tsx**: Main application component.
+- **components/**: Contains reusable UI components.
+  - **PrinterAnimation.tsx**: Animated 3D printer visualization.
+  - **LinkTree.tsx**: List of links to social media and services.
+  - **Workflow.tsx**: Animated workflow steps.
+- **index.html**: Entry point HTML file.
+- **index.css**: Global styles using Tailwind CSS.
 
-## Run Locally
+## Getting Started
 
-**Prerequisites:**  Node.js
+1.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
+2.  **Run development server**:
+    ```bash
+    npm run dev
+    ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3.  **Build for production**:
+    ```bash
+    npm run build
+    ```
+
+## Deployment on Vercel
+
+1.  Push this code to a GitHub repository.
+2.  Import the repository in Vercel.
+3.  Vercel should automatically detect the Vite framework.
+4.  Deploy!
+
+## Customization
+
+-   **Links**: Edit `components/LinkTree.tsx` to update your social media links.
+-   **Images**: Edit `components/PrinterAnimation.tsx` to change the 3D printed items.
+-   **Workflow**: Edit `components/Workflow.tsx` to change the steps.

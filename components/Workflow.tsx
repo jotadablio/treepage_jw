@@ -12,7 +12,7 @@ export const Workflow: React.FC = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setVisibleSteps(prev => {
+      setVisibleSteps((prev: number) => {
         if (prev < steps.length) return prev + 1;
         return prev;
       });

@@ -110,7 +110,10 @@ export const PrinterAnimation: React.FC = () => {
             <div className="relative w-full h-full max-h-[75%] flex items-end justify-center">
                 <img 
                     src={currentItem.image} 
-                    alt="Printing..."
+                    alt={currentItem.name}
+                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                      e.currentTarget.src = "https://placehold.co/600x600/1e293b/cbd5e1?text=Image+Error";
+                    }}
                     className="max-w-full max-h-full object-contain drop-shadow-2xl transition-all duration-75"
                     style={{ 
                         // O segredo do efeito: recortar o topo baseado no progresso
