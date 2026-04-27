@@ -20,7 +20,7 @@ const items = [
   {
     id: 3,
     name: "Peças Técnicas",
-    image: "https://images.unsplash.com/photo-1586775490184-b7913be163a9?auto=format&fit=crop&q=80&w=600",
+    image: "https://placehold.co/600x600/06b6d4/ffffff?text=Pecas+Tecnicas",
     color: "bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]",
     text: "text-cyan-400"
   }

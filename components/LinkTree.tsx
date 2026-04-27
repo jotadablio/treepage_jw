@@ -56,7 +56,7 @@ export const LinkTree: React.FC = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
       
       <LinkCard
-        href="https://wa.me/"
+        href="https://wa.me/5561998243040?text=Olá!%20Gostaria%20de%20orçar%20um%20produto%20ou%20peça!"
         icon={<MessageCircle size={32} className="text-green-400" />}
         title="Orçamento"
         subtitle="WhatsApp"
@@ -65,7 +65,7 @@ export const LinkTree: React.FC = () => {
       />
 
       <LinkCard
-        href="#"
+        href="https://instagram.com/jotadablio3d"
         icon={<Box size={32} className="text-cyan-400" />}
         title="Portfólio"
         subtitle="Meus Trabalhos"
@@ -74,7 +74,7 @@ export const LinkTree: React.FC = () => {
       />
 
       <LinkCard
-        href="#"
+        href="https://tiktok.com/@jotadablio3d"
         icon={<Video size={32} className="text-pink-400" />}
         title="TikTok"
         subtitle="Processo Criativo"
@@ -83,7 +83,7 @@ export const LinkTree: React.FC = () => {
       />
 
       <LinkCard
-        href="#"
+        href="https://cults3d.com/en/users/JW3DWORLD"
         icon={<Download size={32} className="text-purple-400" />}
         title="Arquivos STL"
         subtitle="Cults 3D"
