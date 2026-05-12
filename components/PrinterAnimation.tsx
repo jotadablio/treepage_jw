@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { Zap } from 'lucide-react';
 
-// Substitua as URLs abaixo pelos nomes dos seus arquivos (ex: "/minha-foto.jpg")
+// Para inserir suas próprias fotos, adicione os arquivos na pasta remota "public/" (ou "public/images/")
+// do seu projeto. Como estamos no Vercel/Vite, tudo dentro da pasta "public" pode ser
+// acessado com uma barra "/" no começo.
 const items = [
   {
     id: 1,
     name: "Action Figure",
-    image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&q=80&w=600", 
+    // Coloque sua imagem do Wolverine aqui (ex: na pasta public/ crie uma pasta images e coloque wolverine.png)
+    image: "/images/wolverine.png", 
     color: "bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]",
     text: "text-red-400"
   },
   {
     id: 2,
     name: "Decoração",
-    image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=600",
+    // Coloque sua imagem do Jarro de Plantas aqui
+    image: "/images/jarro.png",
     color: "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]",
     text: "text-emerald-400"
   },
   {
     id: 3,
     name: "Peças Técnicas",
-    image: "https://placehold.co/600x600/06b6d4/ffffff?text=Pecas+Tecnicas",
+    // Coloque sua imagem da saída de ar aqui
+    image: "/images/saida-de-ar.png",
     color: "bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]",
     text: "text-cyan-400"
   }
@@ -112,7 +117,14 @@ export const PrinterAnimation: React.FC = () => {
                     src={currentItem.image} 
                     alt={currentItem.name}
                     onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-                      e.currentTarget.src = "https://placehold.co/600x600/1e293b/cbd5e1?text=Image+Error";
+                      // Se a imagem não for encontrada localmente, mostra um placeholder para não quebrar a animação
+                      const colorMap: Record<string, string> = {
+                        "Action Figure": "ef4444",
+                        "Decoração": "10b981",
+                        "Peças Técnicas": "06b6d4"
+                      };
+                      const hexColor = colorMap[currentItem.name] || "1e293b";
+                      e.currentTarget.src = `https://placehold.co/600x600/${hexColor}/ffffff?text=Faltando+Foto+Local`;
                     }}
                     className="max-w-full max-h-full object-contain drop-shadow-2xl transition-all duration-75"
                     style={{ 

@@ -56,7 +56,7 @@ export const LinkTree: React.FC = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
       
       <LinkCard
-        href="https://wa.me/5561998243040?text=Olá!%20Gostaria%20de%20orçar%20um%20produto%20ou%20peça!"
+        href="https://wa.me/5561998243040?text=Ol%C3%A1%21%20Gostaria%20de%20or%C3%A7ar%20um%20produto%20ou%20pe%C3%A7a%21"
         icon={<MessageCircle size={32} className="text-green-400" />}
         title="Orçamento"
         subtitle="WhatsApp"
