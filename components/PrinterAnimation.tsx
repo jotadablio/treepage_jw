@@ -17,7 +17,7 @@ const items = [
     id: 2,
     name: "Decoração",
     // Coloque sua imagem do Jarro de Plantas aqui
-    image: "/images/1000001321.png",
+    image: "/images/jarro.png",
     color: "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]",
     text: "text-emerald-400"
   },
