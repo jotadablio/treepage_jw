@@ -9,7 +9,7 @@ const items = [
     id: 1,
     name: "Action Figure",
     // Coloque sua imagem do Wolverine aqui (ex: na pasta public/ crie uma pasta images e coloque wolverine.png)
-    image: "/images/wolverine.png", 
+    image: "/images/miranha.png", 
     color: "bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]",
     text: "text-red-400"
   },
@@ -25,7 +25,7 @@ const items = [
     id: 3,
     name: "Peças Técnicas",
     // Coloque sua imagem da saída de ar aqui
-    image: "/images/saida-de-ar.png",
+    image: "/images/pecas.png",
     color: "bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]",
     text: "text-cyan-400"
   }
