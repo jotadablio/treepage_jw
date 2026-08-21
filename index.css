@@ -2,61 +2,60 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-tech: "Orbitron", sans-serif;
-  
-  --color-slate-950: #020617;
-  --color-slate-900: #0f172a;
-  --color-slate-800: #1e293b;
-  --color-slate-700: #334155;
-  --color-slate-600: #475569;
-  --color-slate-500: #64748b;
-  --color-slate-400: #94a3b8;
-  --color-slate-300: #cbd5e1;
-  --color-slate-200: #e2e8f0;
-  --color-slate-100: #f1f5f9;
-  
-  --color-cyan-500: #06b6d4;
-  --color-cyan-400: #22d3ee;
-  --color-cyan-200: #a5f3fc;
-  
-  --color-emerald-500: #10b981;
-  --color-emerald-400: #34d399;
-  
-  --color-red-500: #ef4444;
-  --color-red-400: #f87171;
-  
-  --color-pink-500: #ec4899;
-  --color-pink-400: #f472b6;
-  
-  --color-purple-500: #a855f7;
-  --color-purple-400: #c084fc;
-  
-  --color-amber-500: #f59e0b;
-  
-  --animate-scan-x: scan-x 2s ease-in-out infinite;
-  --animate-build: build-up 2.5s linear forwards;
+  --font-tech: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  @keyframes scan-x {
-    0%, 100% { transform: translateX(-20%); }
-    50% { transform: translateX(20%); }
-  }
+  /* Base neutrals — near-black, low-chroma, professional */
+  --color-slate-950: #09090b;
+  --color-slate-900: #111113;
+  --color-slate-800: #17171a;
+  --color-slate-700: #232326;
+  --color-slate-600: #3a3a3f;
+  --color-slate-500: #5c5c63;
+  --color-slate-400: #86868f;
+  --color-slate-300: #b3b3ba;
+  --color-slate-200: #dcdce0;
+  --color-slate-100: #f4f4f5;
 
-  @keyframes scan-y {
-    0%, 100% { transform: translateY(-10%); }
-    50% { transform: translateY(10%); }
-  }
+  /* Single warm accent — filament/heat tone, used sparingly */
+  --color-amber-500: #d98c3f;
+  --color-amber-400: #e8a666;
 
-  @keyframes build-up {
-    0% { clip-path: inset(100% 0 0 0); opacity: 0.5; }
-    100% { clip-path: inset(0 0 0 0); opacity: 1; }
+  /* Muted per-link identifiers (desaturated, not neon) */
+  --color-cyan-500: #4f9da8;
+  --color-cyan-400: #6bb3bd;
+  --color-cyan-200: #a9d4d9;
+
+  --color-emerald-500: #4f9d72;
+  --color-emerald-400: #6bb389;
+
+  --color-red-500: #b1584f;
+  --color-red-400: #c47770;
+
+  --color-pink-500: #a3597f;
+  --color-pink-400: #b87a9a;
+
+  --color-purple-500: #7d6bab;
+  --color-purple-400: #9686bd;
+
+  --animate-nozzle-travel: nozzle-travel 1.6s ease-in-out infinite;
+
+  @keyframes nozzle-travel {
+    0%, 100% { transform: translateX(-30%); }
+    50% { transform: translateX(30%); }
   }
 }
 
-/* Custom animations for the printer */
-.animate-scan-x {
-  animation: var(--animate-scan-x);
+.animate-nozzle-travel {
+  animation: var(--animate-nozzle-travel);
 }
 
-.animate-build {
-  animation: var(--animate-build);
+/* Layer-line texture revealed as the print progresses */
+.layer-lines {
+  background-image: repeating-linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.22) 0px,
+    rgba(0, 0, 0, 0.22) 1px,
+    transparent 1px,
+    transparent 4px
+  );
 }

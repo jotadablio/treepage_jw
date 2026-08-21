@@ -6,16 +6,15 @@ interface LinkCardProps {
   icon: React.ReactNode;
   title: string;
   subtitle: string;
-  colorClass: string;
-  delay: string;
+  accentClass: string;
 }
 
-const LinkCard: React.FC<LinkCardProps> = ({ href, icon, title, subtitle, colorClass, delay }) => (
+const LinkCard: React.FC<LinkCardProps> = ({ href, icon, title, subtitle, accentClass }) => (
   <a
     href={href}
     target={href === '#' ? undefined : "_blank"}
     rel={href === '#' ? undefined : "noopener noreferrer"}
-    className={`group relative flex flex-col items-center justify-center p-6 gap-3 rounded-2xl border bg-slate-900/40 backdrop-blur-md transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 ${colorClass} ${delay} overflow-hidden`}
+    className="group relative flex items-center gap-4 p-4 rounded-xl border border-slate-700/70 bg-slate-900/60 backdrop-blur-md transition-all duration-300 hover:border-slate-500 hover:bg-slate-900"
     onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
       if (href === '#') {
         e.preventDefault();
@@ -23,72 +22,60 @@ const LinkCard: React.FC<LinkCardProps> = ({ href, icon, title, subtitle, colorC
       }
     }}
   >
-    {/* Hover Gradient Background */}
-    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-white to-transparent transition-opacity duration-500"></div>
-
-    {/* Icon with Glow */}
-    <div className="relative">
-      <div className="absolute inset-0 bg-current opacity-20 blur-xl rounded-full group-hover:opacity-40 transition-opacity"></div>
-      <div className="relative p-3 bg-slate-950/50 rounded-xl border border-white/10 group-hover:border-white/20 transition-colors">
-        {icon}
-      </div>
+    {/* Icon */}
+    <div className={`shrink-0 p-2.5 rounded-lg bg-slate-800 border border-slate-700 transition-colors group-hover:border-slate-600 ${accentClass}`}>
+      {icon}
     </div>
 
     {/* Text */}
-    <div className="text-center z-10">
-      <h2 className="font-tech text-lg font-bold uppercase tracking-wide text-slate-100 group-hover:text-white transition-colors">
+    <div className="min-w-0 flex-1">
+      <h2 className="font-tech text-sm font-semibold text-slate-100">
         {title}
       </h2>
-      <p className="text-[10px] font-medium text-slate-400 uppercase tracking-widest group-hover:text-cyan-200 transition-colors">
+      <p className="text-xs text-slate-400 truncate">
         {subtitle}
       </p>
     </div>
 
     {/* External Link Arrow */}
-    <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-50 transition-opacity transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-      <ArrowUpRight size={14} />
-    </div>
+    <ArrowUpRight size={16} className="shrink-0 text-slate-600 transition-all group-hover:text-slate-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
   </a>
 );
 
 export const LinkTree: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-      
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+
       <LinkCard
         href="https://wa.me/5561998243040?text=Ol%C3%A1%21%20Gostaria%20de%20or%C3%A7ar%20um%20produto%20ou%20pe%C3%A7a%21"
-        icon={<MessageCircle size={32} className="text-green-400" />}
+        icon={<MessageCircle size={20} />}
         title="Orçamento"
-        subtitle="WhatsApp"
-        colorClass="border-green-500/30 hover:border-green-400 hover:shadow-[0_0_20px_rgba(74,222,128,0.2)]"
-        delay="animate-[fadeIn_0.5s_ease-out]"
+        subtitle="Fale pelo WhatsApp"
+        accentClass="text-emerald-400"
       />
 
       <LinkCard
         href="https://instagram.com/jotadablio3d"
-        icon={<Box size={32} className="text-cyan-400" />}
+        icon={<Box size={20} />}
         title="Portfólio"
-        subtitle="Meus Trabalhos"
-        colorClass="border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
-        delay="animate-[fadeIn_0.6s_ease-out]"
+        subtitle="Meus trabalhos"
+        accentClass="text-cyan-400"
       />
 
       <LinkCard
         href="https://tiktok.com/@jotadablio3d"
-        icon={<Video size={32} className="text-pink-400" />}
+        icon={<Video size={20} />}
         title="TikTok"
-        subtitle="Processo Criativo"
-        colorClass="border-pink-500/30 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(244,114,182,0.2)]"
-        delay="animate-[fadeIn_0.7s_ease-out]"
+        subtitle="Processo criativo"
+        accentClass="text-pink-400"
       />
 
       <LinkCard
         href="https://cults3d.com/en/users/JW3DWORLD"
-        icon={<Download size={32} className="text-purple-400" />}
+        icon={<Download size={20} />}
         title="Arquivos STL"
         subtitle="Cults 3D"
-        colorClass="border-purple-500/30 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(192,132,252,0.2)]"
-        delay="animate-[fadeIn_0.8s_ease-out]"
+        accentClass="text-purple-400"
       />
 
     </div>

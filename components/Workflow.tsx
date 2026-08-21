@@ -22,23 +22,23 @@ export const Workflow: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full bg-slate-900/60 rounded-xl border border-slate-800 p-4 mt-4 backdrop-blur-md shadow-lg">
-      <h3 className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 text-center">
-        Passo a Passo
+    <div className="w-full bg-slate-900/60 rounded-xl border border-slate-700/70 p-4 mt-4 backdrop-blur-md">
+      <h3 className="text-[10px] md:text-xs font-medium text-slate-500 uppercase tracking-widest mb-4 text-center">
+        Passo a passo
       </h3>
-      
+
       {/* Container for steps */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-slate-300">
-        
+
         {steps.map((step, index) => (
           <React.Fragment key={step.id}>
             {/* Step Item */}
-            <div 
+            <div
               className={`flex flex-col items-center text-center gap-2 transition-all duration-700 transform flex-1 min-w-0
                 ${index < visibleSteps ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
               `}
             >
-              <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-cyan-400 border border-slate-700 shadow-sm shrink-0">
+              <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-amber-400 border border-slate-700 shrink-0">
                 {step.icon}
               </div>
               {/* Added leading-tight and balance to prevent awkward breaks */}
