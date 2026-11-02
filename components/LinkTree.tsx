@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Box, Download, Video, ArrowUpRight } from 'lucide-react';
+import { MessageCircle, Instagram, ShoppingBag, Video, ArrowUpRight } from 'lucide-react';
 
 interface LinkCardProps {
   href: string;
@@ -47,18 +47,10 @@ export const LinkTree: React.FC = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
 
       <LinkCard
-        href="https://wa.me/5561998243040?text=Ol%C3%A1%21%20Gostaria%20de%20or%C3%A7ar%20um%20produto%20ou%20pe%C3%A7a%21"
-        icon={<MessageCircle size={20} />}
-        title="Orçamento"
-        subtitle="Fale pelo WhatsApp"
-        accentClass="text-emerald-400"
-      />
-
-      <LinkCard
         href="https://instagram.com/jotadablio3d"
-        icon={<Box size={20} />}
+        icon={<Instagram size={20} />}
         title="Portfólio"
-        subtitle="Meus trabalhos"
+        subtitle="@jotadablio3d no Instagram"
         accentClass="text-cyan-400"
       />
 
@@ -71,11 +63,19 @@ export const LinkTree: React.FC = () => {
       />
 
       <LinkCard
-        href="https://cults3d.com/en/users/JW3DWORLD"
-        icon={<Download size={20} />}
-        title="Arquivos STL"
-        subtitle="Cults 3D"
-        accentClass="text-purple-400"
+        href="https://shopee.com.br/jotadablio3d"
+        icon={<ShoppingBag size={20} />}
+        title="Produtos Disponíveis"
+        subtitle="Minha loja na Shopee"
+        accentClass="text-orange-400"
+      />
+
+      <LinkCard
+        href="https://wa.me/5561981230434?text=Ol%C3%A1%21%20Gostaria%20de%20or%C3%A7ar%20um%20produto%20ou%20pe%C3%A7a%21"
+        icon={<MessageCircle size={20} />}
+        title="Orçamento"
+        subtitle="Fale pelo WhatsApp"
+        accentClass="text-emerald-400"
       />
 
     </div>
